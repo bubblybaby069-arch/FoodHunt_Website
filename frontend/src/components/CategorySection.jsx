@@ -13,7 +13,7 @@ const CategorySection = ({ selectedCategory, setSelectedCategory }) => {
   // ================= FETCH CATEGORIES =================
   const fetchCategories = async () => {
     try {
-      const { data } = await api.get("/category/all");
+      const { data } = await api.get("api/category/all");
       setCategories(data.categories || []);
     } catch (error) {
       console.error("Failed to fetch categories", error);
