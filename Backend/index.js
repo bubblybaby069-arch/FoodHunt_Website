@@ -30,10 +30,7 @@ app.use(cookieParser());
 
 app.use(
   cors({
-    origin: [
-      "http://localhost:5173",
-      "https://food-hunt-website.vercel.app",
-    ],
+    origin: "https://food-hunt-website.vercel.app",
     credentials: true,
   })
 );
