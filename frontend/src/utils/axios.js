@@ -5,12 +5,15 @@ const api = axios.create({
 });
 
 api.interceptors.request.use((config) => {
- const token = localStorage.getItem("token");
+  const token = localStorage.getItem("token");
 
-if (!token) {
-  console.log("User not logged in");
-  return;
-}
+  if (token) {
+    // 🔥 FIX: make sure headers exists
+    config.headers = config.headers || {};
+    config.headers.Authorization = `Bearer ${token}`;
+  }
+
+  return config;
 });
 
 export default api;
