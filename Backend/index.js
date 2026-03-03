@@ -32,7 +32,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:5173",
-      "https://food-hunt-website.vercel.app/",
+      "https://food-hunt-website.vercel.app",
     ],
     credentials: true,
   })
